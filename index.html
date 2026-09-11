@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-mode">
+  <div class="dashboard-container">
+    <!-- Header: Mode Toggle, Time, Date, Greeting -->
+    <header class="card greeting-card">
+      <div class="header-top">
+        <button id="themeToggleBtn" class="btn secondary-btn">🌙 Dark Mode</button>
+      </div>
+      <h1 id="currentTime">00:00:00</h1>
+      <p id="currentDate">Date</p>
+      <div class="greeting-wrapper">
+        <span id="greetingText">Good Day</span>, 
+        <input type="text" id="userNameInput" placeholder="Click to edit name" title="Tekan Enter untuk simpan nama" />
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="dashboard-grid">
+      <!-- Focus Timer Card -->
+      <section class="card timer-card">
+        <h2>Focus Timer</h2>
+        <div id="timerDisplay">25:00</div>
+        <div class="timer-controls">
+          <button id="startTimerBtn" class="btn primary-btn">Start</button>
+          <button id="stopTimerBtn" class="btn secondary-btn">Stop</button>
+          <button id="resetTimerBtn" class="btn danger-btn">Reset</button>
+        </div>
+      </section>
+
+      <!-- Tasks / To-Do List Card -->
+      <section class="card tasks-card">
+        <h2>Tasks</h2>
+        <form id="todoForm" class="input-row">
+          <input type="text" id="taskInput" placeholder="Add a new task..." required />
+          <button type="submit" class="btn primary-btn">Add</button>
+        </form>
+        <p id="taskError" class="error-msg"></p>
+        <ul id="taskList" class="list-container"></ul>
+      </section>
+
+      <!-- Quick Links Card -->
+      <section class="card links-card">
+        <h2>Quick Links</h2>
+        <form id="linkForm" class="input-row">
+          <input type="text" id="linkNameInput" placeholder="Link name" required />
+          <input type="url" id="linkUrlInput" placeholder="https://example.com" required />
+          <button type="submit" class="btn primary-btn">Add Link</button>
+        </form>
+        <div id="linksContainer" class="quick-links-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
